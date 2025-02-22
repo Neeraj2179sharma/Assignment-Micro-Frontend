@@ -7,7 +7,8 @@
         "email-app"
     ],
     "scripts": {
-        "start": "concurrently \"cd chat-app && npm start\" \"cd email-app && npm start\" \"wait-on http://localhost:3001/remoteEntry.js && wait-on http://localhost:3002/remoteEntry.js && cd host-app && npm start\""
+        "start": "concurrently \"cd chat-app && npm start\" \"cd email-app && npm start\" \"wait-on http://localhost:3001/remoteEntry.js && wait-on http://localhost:3002/remoteEntry.js && cd host-app && npm start\"",
+        "build": "npm run build --workspace=chat-app && npm run build --workspace=email-app && npm run build --workspace=host-app"
     },
     "devDependencies": {
         "@svgr/webpack": "^8.1.0",
